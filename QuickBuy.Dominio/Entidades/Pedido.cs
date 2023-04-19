@@ -30,8 +30,25 @@ namespace QuickBuy.Dominio.Entidades
 
             if (!ItensPedido.Any())
                 AdicionarCritica("Crítica - Pedido não pode ficar sem item de pedido");
+
             if (string.IsNullOrEmpty(CEP))
                 AdicionarCritica("Crítica - Cep é de preenchimento obrigatório");
+
+            if (FormaPagamentoId == 0)
+                AdicionarCritica("Crítica - não foi informado a forma de pagamento");
+
+            if (NumeroEndereco == 0)
+                AdicionarCritica("Crítica - Numero não informado");
+
+            if (string.IsNullOrEmpty(EnderecoCompleto))
+                AdicionarCritica("Crítica - não foi informado o endereço");
+
+            if (string.IsNullOrEmpty(Cidade))
+                AdicionarCritica("Crítica - Nome da cidade não foi informado");
+
+            if (string.IsNullOrEmpty(Estado))
+                AdicionarCritica("Crítica - Estado não foi informado");
+
         }
     }
 }

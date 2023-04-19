@@ -9,7 +9,14 @@
 
         public override void Validate()
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrEmpty(Nome))
+                AdicionarCritica("Crítica - Nome do produto não foi informado");
+
+            if (string.IsNullOrEmpty(Descricao))
+                AdicionarCritica("Crítica - Descriçao do produto não foi informado");
+
+            if (string.IsNullOrEmpty(Preco))
+                AdicionarCritica("Crítica - Preço do produto não foi informado");
         }
     }
 }
